@@ -1,0 +1,162 @@
+.artists-container {
+	width: 100%;
+	min-height: 100vh;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+
+	.standard-button {
+		color: $primary-dark;
+		border-color: $primary-dark;
+		min-width: max-content;
+		transition: all 150ms ease-in-out;
+
+		&:hover {
+			//   border-color: $primary-color;
+			color: $primary-light;
+			background-color: $primary-dark;
+		}
+	}
+
+	.artist-controls {
+		margin: 0 auto;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		max-width: 990px;
+		margin-bottom: 22px;
+
+		@include tablet {
+			margin-bottom: 38px;
+		}
+
+		@include desktop {
+			margin-bottom: 44px;
+		}
+
+		i {
+			color: $primary-dark;
+			cursor: pointer;
+			margin-left: 1rem;
+			font-size: calc(2.3rem + 4px);
+
+			@include desktop {
+				display: none;
+			}
+		}
+	}
+
+	.filter-active .standard-button {
+		color: $primary-light;
+		// border-color: $primary-color;
+		background-color: $primary-dark;
+	}
+
+	.filter-active i {
+		color: $primary-color;
+		pointer-events: none;
+	}
+}
+
+.all-artists {
+	max-width: 990px;
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.artist-list {
+	// width: ;
+	margin: 0 auto;
+	max-width: 990px;
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	flex-wrap: wrap;
+
+	li {
+		font-size: 1.5rem;
+		display: flex;
+		align-items: center;
+		line-height: 1.5;
+		padding: 0.5rem 1rem;
+		transition: color 100ms ease-in;
+
+		&:hover,
+		&:focus {
+			color: $primary-color;
+		}
+
+		.on-tour {
+			top: 0;
+			right: 0;
+			position: static;
+			display: inline;
+			margin-left: 0.5rem;
+		}
+	}
+}
+
+.artist-grid {
+	margin: 0 auto;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+
+	&__item {
+		position: relative;
+		margin: 10px;
+		max-width: 310px;
+		overflow: hidden;
+		cursor: pointer;
+		width: 100%;
+
+		img {
+			width: 310px;
+			height: 100%;
+			object-fit: cover;
+		}
+
+		h6 {
+			position: absolute;
+			bottom: 0;
+			color: $primary-light;
+			background-color: $primary-color;
+
+			transition: all 350ms ease-out;
+			z-index: 2;
+
+			width: 100%;
+			text-align: left;
+			padding: 0.6rem;
+		}
+	}
+
+	&__item:hover,
+	&__item:focus {
+		.on-tour {
+			background-color: $primary-light;
+			color: $primary-dark;
+			border-color: $primary-dark;
+		}
+		img {
+			transform: scale(1.05);
+			filter: saturate(1);
+		}
+
+		h6 {
+			background-color: $primary-light;
+			color: $primary-color;
+			transform: translateY(-60%);
+		}
+	}
+
+	img {
+		width: 100%;
+		object-fit: cover;
+		filter: saturate(0);
+		transition: all 350ms ease-in-out;
+		transform-origin: center;
+	}
+}

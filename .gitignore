@@ -1,0 +1,35 @@
+node_modules/
+ai1wm-backups/
+grafik_feedback.txt
+
+# Core
+/wp-admin/
+/wp-content/index.php
+/wp-content/languages
+/wp-content/themes/index.php
+/wp-includes/
+/index.php
+/license.txt
+/readme.html
+/wp-*.php
+/xmlrpc.php
+/wp-content/upgrade/
+
+# Configuration
+wp-config.php
+# Uploads
+/wp-content/uploads/
+
+# Log files
+*.log
+
+# htaccess
+/.htaccess
+/wp-content/themes/allrooms-theme/.htaccess
+
+# All plugins
+/wp-content/plugins
+
+# Public Folder
+public/
+/wp-content/themes/allrooms-theme/.cache/

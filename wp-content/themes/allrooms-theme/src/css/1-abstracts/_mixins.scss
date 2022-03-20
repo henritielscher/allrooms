@@ -1,0 +1,48 @@
+// MEDIA QUERRIES
+@mixin x-small {
+  @media (min-width: 400px) {
+    @content;
+  }
+}
+
+@mixin small {
+  @media (min-width: 576px) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media (min-width: 768px) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media (min-width: 992px) {
+    @content;
+  }
+}
+
+@mixin large {
+  @media (min-width: 1200px) {
+    @content;
+  }
+}
+
+@mixin rooms {
+  @media (min-width: 1380px) {
+    @content;
+  }
+}
+
+@mixin xl {
+  @media (min-width: 1500px) {
+    @content;
+  }
+}
+
+@mixin hd {
+  @media (min-width: 1920px) {
+    @content;
+  }
+}

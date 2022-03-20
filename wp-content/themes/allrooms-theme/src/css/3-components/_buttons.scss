@@ -1,0 +1,108 @@
+.standard-button {
+	text-transform: uppercase;
+	outline: none;
+	border: 6px solid $primary-color;
+	background: none;
+	padding: 0.5rem 1rem;
+	font-family: $font-primary;
+	max-width: fit-content;
+	color: $primary-color;
+	cursor: pointer;
+	font-size: 1.3rem;
+}
+
+.page-button {
+	position: relative;
+	background: none;
+	outline: none;
+	border: 6px solid $primary-light;
+	padding: 0.6rem 0.6rem 0.61rem 0.6rem;
+	font-size: 1.5rem;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	transition: all 200ms ease-in;
+}
+
+// PAGINATION
+.pagination-container {
+	margin-bottom: 32px;
+	display: flex;
+	justify-content: center;
+
+	.page-numbers {
+		margin: 5px;
+		padding: 0.1rem 0.5rem;
+		font-family: $font-primary;
+		outline: none;
+		border: 2px solid $primary-dark;
+		cursor: pointer;
+		font-size: 1.3rem;
+		background-color: $primary-light;
+		transition: all 150ms ease-in-out;
+
+		&:hover {
+			border-color: $primary-color;
+			color: $primary-color;
+		}
+	}
+	.page-numbers.current {
+		color: $primary-light;
+		background-color: $primary-dark;
+		pointer-events: none;
+	}
+}
+
+.submit-button {
+	display: block;
+	padding: 0.5em 1rem;
+	font-family: $font-primary;
+	text-transform: uppercase;
+	font-size: 1.3rem;
+	outline: none;
+	color: $primary-light;
+	cursor: pointer;
+	border: 6px solid $primary-light;
+	background: none;
+	transition: all 200ms ease-in;
+	margin: 1.5rem auto;
+	min-width: 80%;
+	max-width: 550px;
+
+	&:hover {
+		background-color: $primary-light;
+		color: $primary-dark;
+	}
+
+	.form-success & {
+		align-items: baseline;
+		justify-content: center;
+		display: flex;
+		flex-direction: row;
+		border-color: lighten(green, 10%);
+		color: $primary-light;
+		background-color: lighten(green, 10%);
+		pointer-events: none;
+
+		i {
+			margin-right: 10px;
+		}
+	}
+
+	.form-error & {
+		align-items: baseline;
+		justify-content: center;
+		color: $primary-light;
+		display: flex;
+		flex-direction: row;
+		border-color: darkred;
+		color: $primary-light;
+		background-color: darkred;
+		pointer-events: none;
+
+		pointer-events: none;
+		i {
+			margin-right: 10px;
+		}
+	}
+}

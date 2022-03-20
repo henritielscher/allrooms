@@ -1,0 +1,64 @@
+.tours-container {
+	min-height: 100vh;
+}
+
+.tours-content {
+	max-width: 990px;
+	width: 90%;
+	display: flex;
+	flex-direction: column;
+	margin: 0 auto;
+	overflow: hidden;
+
+	.artist-live-container {
+		padding: 24px;
+		width: 100%;
+		height: auto;
+		transition: all 500ms ease-in;
+		display: block;
+		margin-bottom: 0;
+		border-color: $primary-dark;
+	}
+}
+
+.hidden .artist-live-container {
+	height: 0;
+	display: none;
+}
+
+.touring-artist:first-of-type .dropdown-tour {
+	margin: 0;
+}
+
+.dropdown-tour {
+	background-color: $primary-dark;
+	color: $primary-light;
+	display: flex;
+	align-items: center;
+	cursor: pointer;
+	margin: 20px 0 0 0;
+	padding-right: 1rem;
+	justify-content: space-between;
+
+	&__links {
+		display: flex;
+		width: 100%;
+		align-items: center;
+		height: 100%;
+	}
+
+	&__image {
+		margin-right: 1rem;
+		max-width: 80px;
+		object-fit: cover;
+	}
+
+	&__toggle-button {
+		display: block;
+		font-size: 1.5rem;
+	}
+}
+
+.touring-artist {
+	overflow: hidden;
+}

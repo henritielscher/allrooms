@@ -1,0 +1,232 @@
+.news-container {
+	min-height: 100vh;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.news-box {
+	max-width: 990px;
+	display: flex;
+	flex-direction: column;
+	width: 90%;
+
+	@include small {
+		width: 70%;
+	}
+
+	@include tablet {
+		width: 90%;
+	}
+}
+
+.news-item {
+	display: flex;
+	flex-direction: column;
+	border: 6px solid $primary-dark;
+	margin-bottom: 2rem;
+	width: 100%;
+
+	@include tablet {
+		flex-direction: row;
+		flex-wrap: wrap;
+		// border-width: 3px;
+	}
+}
+
+.news-item__header {
+	background-color: $primary-dark;
+	margin-bottom: 1rem;
+	display: flex;
+	flex-direction: column;
+
+	@include tablet {
+		align-items: center;
+		margin-bottom: 0;
+		// width: 40%;
+		width: 272px;
+		padding: 2rem 0;
+	}
+
+	@include desktop {
+		padding: 2rem 2rem 1rem;
+	}
+}
+
+.news-item__header-info {
+	display: flex;
+	flex-direction: column;
+
+	&__image {
+		// width: 100%;
+
+		position: relative;
+		display: flex;
+		justify-content: center;
+
+		img {
+			width: 100%;
+			object-fit: cover;
+			height: 200px;
+
+			@include tablet {
+				width: 200px;
+				border: 1px solid $primary-color;
+			}
+		}
+	}
+}
+
+.news-item__band {
+	width: 100%;
+	// padding: 0.5rem 1rem;
+	padding: 1rem;
+	color: $primary-light;
+
+	@include tablet {
+		padding: 1rem 0;
+	}
+
+	@include desktop {
+		padding: 1rem 0;
+	}
+}
+
+.news-item__content {
+	display: flex;
+	flex-direction: column;
+	padding: 0 1rem;
+	margin: 0 auto;
+	width: 100%;
+
+	@include tablet {
+		width: calc(100% - 272px);
+		padding: 1rem 1rem 0 1rem;
+	}
+
+	@include desktop {
+		padding: 1rem 2rem;
+	}
+}
+
+.content-header {
+	display: flex;
+	flex-direction: column;
+}
+
+.content-date {
+	// font-weight: 600;
+	// font-size: 0.8rem;
+
+	@include tablet {
+		margin-top: 1rem;
+	}
+}
+
+.content-headline {
+	color: $primary-color;
+	line-height: 1.3;
+	width: 100%;
+	margin: 1rem 0;
+	border-bottom: 2px solid lightgray;
+	// text-transform: none;
+
+	@include small {
+		font-size: 1.5rem;
+	}
+}
+
+.content-text {
+	margin: 1rem 0;
+
+	@include tablet {
+		// padding: 0 1rem;
+		p {
+			font-size: 15px;
+		}
+	}
+}
+
+p:last-child {
+	margin-bottom: 1em;
+}
+
+.link-box-small {
+	align-self: flex-end;
+	// flex-grow: 1;
+	color: $primary-light;
+	background-color: $primary-dark;
+	line-height: 1.8;
+	display: flex;
+	align-items: center;
+	width: calc(100% + 2rem);
+	padding: 0.5rem 1rem;
+	margin: auto -1rem 0 -1rem;
+	justify-content: space-between;
+
+	@include tablet {
+		justify-content: flex-start;
+		background-color: $primary-color;
+	}
+
+	@include desktop {
+		padding: 0.5rem 2rem;
+		margin: auto -2rem -1rem -2rem;
+		width: calc(100% + 4rem);
+	}
+
+	&__artist-links {
+		display: flex;
+		align-items: center;
+
+		i {
+			font-size: 1.3rem;
+			padding-right: 8px;
+
+			@include x-small {
+				padding-right: 10px;
+			}
+
+			@include small {
+				padding-right: 12px;
+			}
+		}
+	}
+
+	.page-button {
+		font-size: 1rem;
+		// border: none;
+		padding: 0.2rem 1rem;
+		margin-right: 1rem;
+		transition: all 100ms ease-in;
+
+		&:hover,
+		&:focus {
+			background: $primary-light;
+			color: $primary-dark;
+		}
+
+		@include x-small {
+			margin-right: 2rem;
+		}
+
+		@include tablet {
+			&:hover,
+			&:focus {
+				color: $primary-color;
+			}
+		}
+	}
+}
+
+.news-container .artist-live-container {
+	width: 100%;
+	height: auto;
+	border-width: 1px;
+	margin: 24px 0 1rem 0;
+	padding: 15px;
+
+	.live-dates td {
+		font-size: 0.8rem;
+	}
+}

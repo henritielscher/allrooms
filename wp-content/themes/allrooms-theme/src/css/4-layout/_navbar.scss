@@ -1,0 +1,393 @@
+.scroll-nav .nav {
+  box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.3);
+
+  @include desktop {
+    .navbar {
+      height: 55px;
+    }
+
+    .navbar-logo-bottom {
+      opacity: 0;
+      height: 0;
+      transform: translateY(30px);
+    }
+  }
+}
+
+.nav {
+  position: fixed;
+  z-index: 100;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  background-color: $primary-color;
+  color: $primary-light;
+  // transition: all 200ms ease;
+}
+
+.navbar {
+  max-width: 1600px;
+  width: 100%;
+  margin: 0 auto;
+  height: 55px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  transition: height 350ms ease;
+
+  @include tablet {
+    height: 85px;
+  }
+
+  @include xl {
+    justify-content: center;
+  }
+}
+
+.navbar-lang-container {
+  // width: 120px;
+  margin: 0 1rem;
+
+  @include small {
+    margin: 0 5%;
+  }
+
+  @include desktop {
+    margin: 0 2.5%;
+  }
+
+  @include rooms {
+    width: 120px;
+    margin: 0 auto 0 5%;
+  }
+
+  @include hd {
+    margin-left: 0;
+  }
+}
+
+.navbar-lang {
+  position: relative;
+  display: flex;
+  border: 2px $primary-light solid;
+  font-size: 16px;
+  align-items: center;
+  width: fit-content;
+  text-align: center;
+  transition: all 200ms ease-in-out;
+
+  @include large {
+    font-size: 20px;
+    border-width: 2px;
+  }
+}
+
+.navbar-lang-choice {
+  padding: 5px;
+  width: 50%;
+  z-index: 2;
+  cursor: pointer;
+}
+
+.active-lang {
+  color: $primary-color;
+  pointer-events: none;
+}
+
+.navbar-lang-selector {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 50%;
+  background-color: $primary-light;
+  height: 100%;
+  transition: transform 200ms ease;
+  transform: translateX(0);
+  border: 3px solid $primary-light;
+}
+
+.toggle-lang .navbar-lang-selector {
+  transform: translateX(102%);
+}
+.navbar-center {
+  @include desktop {
+    width: 100%;
+    display: flex;
+    max-width: 990px;
+    align-items: center;
+    justify-content: space-evenly;
+    font-size: 18px;
+  }
+
+  @include large {
+    font-size: 20px;
+  }
+
+  @include xl {
+    justify-content: space-between;
+    font-size: 24px;
+  }
+}
+
+.navbar-left,
+.navbar-right {
+  display: none;
+
+  @include desktop {
+    display: flex;
+    text-transform: uppercase;
+
+    a {
+      color: $primary-light;
+      text-decoration: none;
+      transition: font-size 200ms ease-out;
+    }
+
+    li {
+      padding: 0.6rem;
+    }
+  }
+}
+
+.navbar-left {
+  @include desktop {
+    li:nth-of-type(1) {
+      padding-left: 0;
+    }
+  }
+}
+
+.navbar-link:hover a {
+  color: $primary-dark;
+  transition: color 200ms ease-in-out;
+}
+
+.navbar-link--active a {
+  color: $primary-dark;
+}
+
+.navbar-right {
+  @include desktop {
+    li:nth-of-type(3) {
+      padding-right: 0;
+    }
+  }
+}
+
+.navbar-logo {
+  position: relative;
+  margin: 0 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.navbar-logo-top,
+.navbar-logo-bottom {
+  position: relative;
+  width: 100px;
+
+  @include tablet {
+    width: 160px;
+  }
+  @include large {
+    width: 180px;
+  }
+}
+
+.navbar-logo-top {
+  top: 0;
+  transition: all 200ms ease-out;
+}
+
+.navbar-logo-bottom {
+  bottom: 0;
+  margin-top: 5px;
+  opacity: 1;
+  transition: all 400ms ease-in;
+  transform: translateY(0);
+}
+
+.navbar-social-media {
+  display: none;
+  margin: 0 5%;
+
+  @include desktop {
+    display: flex;
+    align-items: center;
+    font-size: 30px;
+    width: fit-content;
+    margin: 0 2.5%;
+
+    a {
+      color: $primary-light;
+      margin-left: 0.5em;
+    }
+
+    a:hover {
+      color: $primary-dark;
+    }
+
+    a:nth-of-type(1) {
+      margin-left: 0;
+    }
+  }
+
+  @include rooms {
+    width: 120px;
+    margin: 0 5% 0 auto;
+  }
+
+  @include hd {
+    margin-right: 0;
+  }
+}
+
+// Mobile Menu
+.navbar-mobile {
+  position: absolute;
+  background-color: $primary-color;
+  top: calc(100%);
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  align-items: flex-start;
+  transform: translateX(100%);
+  transition: transform 500ms ease;
+  z-index: 99;
+
+  @include tablet {
+    height: calc(100vh - 85px);
+  }
+
+  @include desktop {
+    display: none;
+  }
+
+  .navbar-mobile-container {
+    margin: 3rem auto 0 auto;
+    text-transform: uppercase;
+    font-size: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: 4px solid $primary-light;
+    min-width: fit-content;
+    min-height: fit-content;
+    padding: 10% 15%;
+    background-color: $primary-color;
+    max-height: 80%;
+
+    @include small {
+      font-size: 40px;
+    }
+
+    @include tablet {
+      border-width: 6px;
+    }
+
+    @media (orientation: landscape) {
+      font-size: 20px;
+      // border: none;
+      padding: 5% 10%;
+      margin-top: 2em;
+    }
+  }
+
+  .navbar-mobile-links {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+
+    @media (orientation: landscape) {
+      flex-direction: row;
+      flex-wrap: wrap;
+      li {
+        margin-right: 1rem;
+      }
+    }
+
+    li {
+      margin-bottom: 0.5em;
+      text-transform: uppercase;
+      transition: transform 150ms ease;
+    }
+
+    a {
+      text-decoration: none;
+      color: $primary-light;
+    }
+
+    li:hover {
+      transform: translateX(-8px);
+      transform-origin: center;
+
+      & a {
+        color: $primary-dark;
+        transition: color 200ms ease-in-out;
+      }
+    }
+
+    .navbar-link--active a {
+      color: $primary-dark;
+    }
+  }
+
+  .navbar-mobile-social-media {
+    margin-top: 20px;
+
+    a {
+      color: $primary-dark;
+    }
+
+    i:nth-of-type(1) {
+      margin-right: 10px;
+    }
+  }
+}
+
+.navbar-mobile-active {
+  .navbar-mobile {
+    // background-color: rgba(242, 149, 48, 0.7);
+    background-color: $primary-color;
+    transform: translateX(0%);
+  }
+}
+
+// Burger Menu
+.navbar-burger {
+  width: fit-content;
+  cursor: pointer;
+  margin: 0 1rem;
+
+  .line1,
+  .line2,
+  .line3 {
+    background-color: $primary-light;
+    height: 3px;
+    width: 30px;
+    margin-bottom: 5px;
+    transition: all 250ms ease;
+    border-radius: 3px;
+  }
+
+  @include small {
+    margin: 0 5%;
+  }
+
+  @include desktop {
+    display: none;
+  }
+}
+
+.burger-toggle .line1 {
+  transform: rotate(-45deg) translate(-5px, 6px);
+}
+.burger-toggle .line2 {
+  opacity: 0;
+}
+.burger-toggle .line3 {
+  transform: rotate(45deg) translate(-5px, -6px);
+}

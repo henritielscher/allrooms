@@ -1,0 +1,79 @@
+@font-face {
+	font-family: "Vinyl Regular";
+	src: url("../fonts/font.woff") format("woff");
+}
+
+@font-face {
+	font-family: "Roboto Regular";
+	src: url("../fonts/Roboto-Regular.ttf") format("truetype");
+}
+
+@font-face {
+	font-family: "Rubik Regular";
+	src: url("../fonts/Rubik-Regular.ttf") format("truetype");
+}
+
+// General font-size and -family
+html {
+	font-family: $font-primary;
+	color: $primary-dark;
+	font-size: 15px;
+
+	@include small {
+		font-size: 16px;
+	}
+
+	@include tablet {
+		font-size: 18px;
+	}
+
+	@include rooms {
+		font-size: 20px;
+	}
+}
+
+// All paragraphs (mostly press text)
+p {
+	font-family: $font-secondary;
+	line-height: 1.3;
+	text-align: left;
+	margin-bottom: 1em;
+	font-size: 0.9rem;
+
+	&:last-child {
+		margin: 0;
+	}
+}
+
+// Headers
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	text-transform: uppercase;
+}
+
+h1 {
+	font-size: 5rem;
+}
+
+h2 {
+	font-size: 3.5rem;
+}
+
+h3 {
+	font-size: 2rem;
+}
+
+h4 {
+	font-size: 1.5rem;
+}
+
+h5 {
+	font-size: 1.25rem;
+}
+h6 {
+	font-size: 1rem;
+}

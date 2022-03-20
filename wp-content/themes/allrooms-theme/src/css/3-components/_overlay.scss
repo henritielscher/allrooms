@@ -1,0 +1,104 @@
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(242, 149, 48, 0.8);
+  z-index: 2;
+  display: flex;
+  overflow-x: hidden;
+  transition: all 500ms ease;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+  text-align: center;
+  padding: 1rem;
+}
+
+.news-overlay-header {
+  font-size: 2rem;
+  text-transform: uppercase;
+  // padding: 0.5rem;
+  opacity: 0;
+  transition: all 500ms ease;
+  text-shadow: 2px 2px black;
+  padding: 0.5rem 27px;
+  transform: translateX(-400px);
+
+  @include small {
+    width: calc(80% - 60px);
+    font-size: 2.5rem;
+    padding: 1rem;
+  }
+
+  @include tablet {
+    font-size: 3rem;
+  }
+}
+
+.news-overlay-title {
+  text-transform: uppercase;
+  font-size: 1.2rem;
+  padding: 10px 20px 20px 20px;
+  line-height: 1.3;
+  opacity: 0;
+  transition: all 500ms ease;
+  text-shadow: 1px 1px black;
+  transform: translateX(400px);
+
+  @include x-small {
+    padding: 0.5rem 0 1rem 0;
+  }
+
+  @include small {
+    font-size: 1.5rem;
+    // width: calc(80% - 60px);
+    // padding: calc(10px + 0.5rem);
+  }
+
+  @include desktop {
+    padding: 1rem 0 1.5rem 0;
+  }
+}
+
+.artist-overlay {
+  color: $primary-color;
+  background-blend-mode: multiply;
+
+  .artist-name {
+    line-height: 1.1;
+    width: 100%;
+    font-size: 2rem;
+    margin: 0 2rem 1rem 2rem;
+    opacity: 1;
+
+    @include small {
+      width: calc(80% - 60px);
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+    }
+
+    @include tablet {
+      font-size: 3rem;
+    }
+  }
+}
+
+.on-tour {
+  // white-space: nowrap;
+  // display: block;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  // width: fit-content;
+  padding: 0.5em;
+  border: 2px solid $primary-light;
+  color: $primary-light;
+  // height: fit-content;
+  text-transform: uppercase;
+  font-size: 0.8rem;
+  background-color: $primary-dark;
+  transition: all 350ms ease-out;
+  z-index: 3;
+}

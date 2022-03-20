@@ -1,0 +1,382 @@
+.live-dates-container {
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+	max-width: 990px;
+	border: 6px solid $primary-color;
+	padding: 12px;
+
+	@include x-small {
+		padding: 24px;
+	}
+
+	@include desktop {
+		padding: 54px;
+	}
+}
+
+.live-section {
+	margin: 24px 0;
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+
+	.page-button {
+		margin: 0 0 0 auto;
+		border-color: $primary-dark;
+	}
+}
+
+.presenter {
+	// display: block;
+	width: 100%;
+	margin: 0 1rem 0.5rem 8px;
+	font-size: 0.7rem;
+	line-height: 1.5;
+	font-family: $font-secondary;
+
+	a {
+		font-family: $font-secondary;
+		font-weight: 600;
+		color: $primary-color;
+		text-transform: capitalize;
+
+		&:hover {
+			color: $primary-dark;
+		}
+	}
+}
+
+// Table class for Live Date Datatable
+.live-dates {
+	td {
+		font-size: 0.9rem;
+	}
+}
+
+.live-header {
+	display: flex;
+	// flex-wrap: wrap;
+	justify-content: space-between;
+	width: 100%;
+	margin: 0.5rem 0 1.5rem 0;
+
+	.live-title {
+		white-space: nowrap;
+		width: fit-content;
+		text-transform: uppercase;
+		font-size: 1.5rem;
+		margin: 0 1rem;
+		margin-top: 1rem;
+		font-weight: 600;
+
+		@include x-small {
+			font-size: 2rem;
+		}
+	}
+
+	.live-line {
+		visibility: hidden;
+		margin: 0 auto;
+		width: 100%;
+		border-bottom: 2px solid $primary-dark;
+
+		@include small {
+			visibility: visible;
+		}
+	}
+}
+
+table.dataTable.nowrap .date {
+	white-space: normal;
+	// max-width: 80px;
+	line-height: 1.5;
+}
+
+.band a,
+.venue a {
+	transition: color 200ms ease-in-out;
+	text-transform: none;
+	color: $primary-color;
+
+	&:hover {
+		color: $primary-dark;
+	}
+}
+
+.venue a {
+	text-transform: none;
+}
+
+.child li[data-dtr-index="1"] :last-child {
+	text-transform: uppercase;
+}
+
+.child li span {
+	padding: 5px;
+	white-space: normal;
+}
+
+.child .fb-link,
+.child .ticket-link {
+	padding: 0.2em 0.3em;
+}
+
+.child .none span:last-child {
+	color: red;
+	font-size: 0.8rem;
+	float: right;
+}
+
+.date-links {
+	text-align: center;
+}
+
+.fb-link,
+.ticket-link {
+	border: none;
+	outline: none;
+	text-transform: uppercase;
+	font-family: $font-primary;
+	font-size: 1em;
+	padding: 0.3em 0.5em;
+	max-height: 45px;
+	color: $primary-light;
+	cursor: pointer;
+	text-align: center;
+	transition: border-color 120ms ease-in-out;
+}
+
+.fb-link {
+	background-color: #3b5998;
+	margin-right: 5px;
+	border: 2px solid #3b5998;
+
+	&:hover {
+		// background-color: #4466ad;
+		border-color: $primary-dark;
+		// border-color: #4466ad;
+	}
+}
+
+.ticket-link {
+	position: relative;
+	background-color: $primary-dark;
+	border: 2px solid $primary-dark;
+
+	&:hover {
+		border-color: $primary-color;
+	}
+}
+// STATUS BOXES & MESSAGES
+
+.info-message {
+	text-align: center;
+}
+
+table.dataTable.nowrap .info-message {
+	white-space: normal;
+	max-width: 80px;
+}
+
+.status-box {
+	border-radius: 5px;
+	display: block;
+	font-family: $font-secondary;
+	font-size: 11px;
+	margin: 5px auto;
+	padding: 5px;
+	text-transform: lowercase;
+	text-align: center;
+	width: 70px;
+}
+
+.child .status-box {
+	display: block;
+	margin: 5px;
+
+	@include x-small {
+		display: inline-block;
+	}
+}
+
+.status-message {
+	line-height: 1.5;
+	font-size: 11px;
+	font-family: $font-secondary;
+	// text-align: left;
+	// float: left;
+}
+
+.child .status-message {
+	display: block;
+}
+
+.relocated {
+	background-color: blueviolet;
+	color: $primary-light;
+}
+
+.postponed {
+	background-color: gold;
+}
+
+.cancelled {
+	text-transform: uppercase;
+	background-color: darkred;
+	color: white;
+	animation: warning 1800ms infinite ease-in-out;
+}
+
+@keyframes warning {
+	0% {
+		background-color: darkred;
+	}
+
+	50% {
+		background-color: red;
+	}
+}
+
+.sold_out {
+	background-color: turquoise;
+	// color: $primary-light;
+	color: $primary-dark;
+}
+
+.no-ticket .ticket-link {
+	position: relative;
+	background-color: transparent;
+	color: $primary-dark;
+	background: url(../img/no-tickets.png);
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center;
+	pointer-events: none;
+}
+.no-ticket + .child .ticket-link {
+	position: relative;
+	background-color: transparent;
+	color: $primary-dark;
+	background: url(../img/no-tickets.png);
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center;
+}
+
+.no-ticket .date-links a:last-child {
+	pointer-events: none;
+}
+
+.no-ticket + .child a:last-child {
+	pointer-events: none;
+}
+
+// Overwrite default Datatable CSS
+table.dataTable.no-footer {
+	border: none;
+}
+
+table.dataTable tbody tr td {
+	vertical-align: middle;
+}
+
+table.dataTable thead th,
+table.dataTable thead td {
+	position: relative;
+	border: none;
+	text-align: left;
+	padding: 10px 8px;
+	text-transform: uppercase;
+}
+
+table.dataTable thead {
+	border-spacing: 1.5rem;
+}
+
+table.dataTable tbody td:last-of-type {
+	padding-right: 0;
+}
+
+table.dataTable.stripe tbody tr.even,
+table.dataTable.display tbody tr.even,
+table.dataTable.display tbody tr.odd,
+table.dataTable.stripe tbody tr.odd {
+	background-color: $primary-light;
+}
+
+table.dataTable.hover tbody tr:hover {
+	background-color: #fef7f0;
+}
+
+table.dataTable.dtr-inline.collapsed > tbody > tr > td.child,
+table.dataTable.dtr-inline.collapsed > tbody > tr > th.child,
+table.dataTable.dtr-inline.collapsed > tbody > tr > td.dataTables_empty {
+	cursor: default !important;
+}
+table.dataTable.dtr-inline.collapsed > tbody > tr > td.child:before,
+table.dataTable.dtr-inline.collapsed > tbody > tr > th.child:before,
+table.dataTable.dtr-inline.collapsed > tbody > tr > td.dataTables_empty:before {
+	display: none !important;
+}
+table.dataTable.dtr-inline.collapsed > tbody > tr > td.dtr-control,
+table.dataTable.dtr-inline.collapsed > tbody > tr > th.dtr-control {
+	position: relative;
+	padding-left: 30px;
+	cursor: pointer;
+}
+table.dataTable.dtr-inline.collapsed > tbody > tr > td.dtr-control:before,
+table.dataTable.dtr-inline.collapsed > tbody > tr > th.dtr-control:before {
+	top: 50%;
+	left: 5px;
+	height: 0.8em;
+	width: 0.8em;
+	margin-top: -9px;
+	display: block;
+	position: absolute;
+	box-sizing: content-box;
+	text-align: center;
+	text-indent: 0 !important;
+	line-height: 1em;
+	background-color: transparent;
+	content: "";
+	background-image: url(../img/plus-solid.svg);
+	border: none;
+	color: #2b2d42;
+	background-size: contain;
+	background-position: center;
+	background-repeat: no-repeat;
+	cursor: pointer;
+}
+table.dataTable.dtr-inline.collapsed
+	> tbody
+	> tr.parent
+	> td.dtr-control:before,
+table.dataTable.dtr-inline.collapsed
+	> tbody
+	> tr.parent
+	> th.dtr-control:before {
+	background-image: url(../img/minus-solid.svg);
+	content: "";
+}
+
+table.dataTable.dtr-inline.collapsed > tbody > tr > td.dtr-control:before,
+table.dataTable.dtr-inline.collapsed > tbody > tr > th.dtr-control:before {
+	box-shadow: none;
+}
+
+table.dataTable.dtr-inline.collapsed
+	> tbody
+	> tr.parent
+	> td.dtr-control:before,
+table.dataTable.dtr-inline.collapsed
+	> tbody
+	> tr.parent
+	> th.dtr-control:before {
+	background-color: transparent;
+	border: none;
+}
+
+.dataTables_wrapper:after {
+	margin: 24px;
+}
