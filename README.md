@@ -10,16 +10,6 @@ It's a fully responsive dynamic website for a Berlin Indie music artists agency 
 
 The website is not up and running in production to this day (March 20th 2022) since the database is not up to date yet.
 
-## Additional Infos / Thoughts
-
----
-
-Initially I was building this site with Express, NodeJS, EJS and MongoDB, which I discarded because of the CMS in Wordpress. At that point it seemed to be the better solution for integrating a nice Backend for the client. Nowadays I would probably go for a NextJS application with Strapi as CMS.
-
-Since this build I found myself using classes for JavaScript functionality which I really like for separating everything into its own resusable modules. Since most of them are only used with one instance I did not implement Prototypes here.
-
-For the build and development process I would rather go with Vite instead of Webpack.
-
 ## Features
 
 ---
@@ -39,3 +29,13 @@ For the build and development process I would rather go with Vite instead of Web
 The main focus is lying in the build of the Wordpress theme with all it's customized backend functionality. This is why the [functions.php](/wp-content/themes/allrooms-theme/functions.php) is the most important part to mention here.
 
 Furthermore the various classes in the [modules Folder](/wp-content/themes/allrooms-theme/src/js/modules/) to handle the behaviour of the site are certainly a big chunk of the client-side functionality.
+
+## Additional Infos / Thoughts
+
+---
+
+Initially I was building this site with Express, NodeJS, EJS and MongoDB, which I discarded because of the CMS in Wordpress. At that point it seemed to be the better solution for integrating a nice Backend for the client. Nowadays I would probably go for a NextJS application with Strapi as CMS.
+
+Since this build I found myself using classes for JavaScript functionality which I really like for separating everything into its own resusable modules. Since most of them are only used with one instance I did not implement Prototypes here.
+
+For the build and development process I would rather go with Vite instead of Webpack.
